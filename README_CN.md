@@ -28,7 +28,8 @@
 
 ## 📢 最近更新
 
-- **2026-03-18** — ![NEW](https://img.shields.io/badge/NEW-red?style=flat-square) 🤖 **[Codex CLI 原生 skills](skills/skills-codex/)** — 完整 ARIS skill 集合的 Codex CLI 版本，现已补齐 `grant-proposal`、`paper-illustration` 和 `experiment-bridge`。即插即用 `skills/skills-codex/` + LaTeX 模板。社区贡献 by [@Falling-Flower](https://github.com/Falling-Flower)
+- **2026-03-18** — ![NEW](https://img.shields.io/badge/NEW-red?style=flat-square) 🖱️ **[Cursor 适配指南](docs/CURSOR_ADAPTATION.md)** — 在 [Cursor](https://www.cursor.com/) 中使用 ARIS skills，`@` 引用、MCP 配置、状态文件恢复。社区贡献 by [@YecanLee](https://github.com/YecanLee)
+- **2026-03-18** — ![NEW](https://img.shields.io/badge/NEW-red?style=flat-square) 🤖 **[Codex CLI 原生 skills](skills/skills-codex/)** — 完整 31 个 ARIS skill 的 Codex CLI 版本，用 `spawn_agent`。社区贡献 by [@Falling-Flower](https://github.com/Falling-Flower) & [@No-518](https://github.com/No-518)
 - **2026-03-18** — ![NEW](https://img.shields.io/badge/NEW-red?style=flat-square) 📝 **[`grant-proposal`](skills/grant-proposal/SKILL.md)** — 从研究 idea 自动生成结构化基金申请书。支持 9 个资助机构：科研費/KAKENHI（日本）、NSF（美国）、国自然/NSFC（含面上/青年/优青/杰青/海外优青/重点）、ERC（欧盟）、DFG、SNSF、ARC、NWO 及通用格式。串联 `/research-lit` → `/novelty-check` → `/research-review` → `/paper-illustration`。社区贡献 by [@dengzhe-hou](https://github.com/dengzhe-hou)
 - **2026-03-18** — ![NEW](https://img.shields.io/badge/NEW-red?style=flat-square) 🎨 **[`paper-illustration`](skills/paper-illustration/SKILL.md)** — AI 生成出版级架构图/方法示意图。Claude 规划 → Gemini 渲染 → 迭代优化至 ≥9 分。集成到工作流 3（`illustration: true`，需 `GEMINI_API_KEY`）。基于 [PaperBanana](https://github.com/dwzhu-pku/PaperBanana)。社区贡献 by [@Joseph-li343](https://github.com/Joseph-li343)
   <details><summary>预览 demo</summary><br><img src="assets/paper_illustration_demo.png" width="600" alt="paper-illustration 示例" /></details>
