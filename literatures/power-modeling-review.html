@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Estimation Papers</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #f0f2f5;
+    padding: 20px;
+    color: #1a1a2e;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 1.5rem;
+    color: #16213e;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    background: #fff;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 960px;
+  }
+  thead th {
+    background: #16213e;
+    color: #fff;
+    padding: 14px 12px;
+    text-align: left;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  thead th:first-child { border-radius: 10px 0 0 0; }
+  thead th:last-child  { border-radius: 0 10px 0 0; }
+  tbody tr { transition: background 0.15s; }
+  tbody tr:nth-child(even) { background: #f8f9fb; }
+  tbody tr:hover { background: #edf2fc; }
+  td {
+    padding: 12px;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    vertical-align: top;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  td:nth-child(1) { font-weight: 600; min-width: 200px; }
+  td:nth-child(2) { min-width: 55px; text-align: center; font-weight: 700; color: #16213e; }
+  td:nth-child(3) { min-width: 80px; text-align: center; }
+  td:nth-child(4) { min-width: 220px; }
+  td:nth-child(5) { min-width: 250px; }
+  a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  a:hover { text-decoration: underline; }
+  .idx {
+    display: inline-block;
+    background: #16213e;
+    color: #fff;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+    font-size: 0.72rem;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+  .name-cell { display: flex; align-items: flex-start; }
+  .name-cell span:last-child { flex: 1; }
+  .tag {
+    display: inline-block;
+    background: #e8edfb;
+    color: #2563eb;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .year-badge {
+    display: inline-block;
+    background: #f0f4ff;
+    border: 1.5px solid #c7d5f5;
+    color: #16213e;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+  .fix-badge {
+    display: inline-block;
+    background: #fff3cd;
+    border: 1.5px solid #f0c040;
+    color: #856404;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+  .footer-note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 14px;
+  }
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    h1 { font-size: 1.15rem; }
+    td, thead th { padding: 8px 6px; font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>On-Chip Power Proxy &amp; Estimation — Related Works</h1>
+<p class="subtitle">31 unique papers sorted by publication year (oldest → newest), filtered from local PDFs plus the original review list. Internet links are provided for every entry, and local-copy links are shown when a local PDF was found.</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+  <tr>
+    <th>Paper Name</th>
+    <th>Year</th>
+    <th>Link</th>
+    <th>Method</th>
+    <th>Main Contribution</th>
+  </tr>
+</thead>
+<tbody>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">1</span><span>Register-Transfer Level Estimation Techniques for Switching Activity and Power Consumption</span></div></td>
+  <td><span class="year-badge">1996</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/569539" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/1996-register-transfer-level-estimation-techniques-for-switching-activity-and-power-consumption.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Piecewise-Linear + Bit-Level Glitch Modeling</span><br/>Builds RTL block power models and estimates both word-level and bit-level glitching activity, then feeds those signal statistics into block-level power models.</td>
+  <td>Showed that RTL power estimation can explicitly model glitching in datapath and control logic, producing estimates within 7% of final gate-level analysis.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">2</span><span>Power Modeling for High-Level Power Estimation</span></div></td>
+  <td><span class="year-badge">2000</span></td>
+  <td><a href="https://doi.org/10.1109/92.820758" target="_blank">DOI</a> / <a download="" href="power-modeling-papers/2000-power-modeling-for-high-level-power-estimation.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">4D Table-Based Macromodel</span><br/>Automatically characterizes a combinational block with a four-dimensional table indexed by input probability, transition density, spatial correlation, and output zero-delay transition density.</td>
+  <td>Established a practical high-level power macromodel with good accuracy across wide input statistics, making early design-space exploration far cheaper than repeated low-level simulation.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">3</span><span>Runtime Power Monitoring in High-End Processors: Methodology and Empirical Data</span></div></td>
+  <td><span class="year-badge">2003</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/1253186" target="_blank">IEEE</a> / <a href="https://mrmgroup.cs.princeton.edu/papers/canturkmicro.pdf" target="_blank">PDF</a> / <a download="" href="power-modeling-papers/2003-runtime-power-monitoring-in-high-end-processors-methodology-and-empirical-data.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Piecewise / Per-Unit Linear Regression</span><br/>Divides the processor into functional units and correlates per-unit PMC activity counts with measured power using linear weights.</td>
+  <td>Foundational work showing real-time power can be accurately estimated from existing hardware counters. Introduced "power phases" and per-unit power decomposition, enabling fine-grained thermal and power management.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">4</span><span>Power Prediction for Intel XScale Processors using Performance Monitoring Unit Events</span></div></td>
+  <td><span class="year-badge">2005</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/1522767" target="_blank">IEEE</a> / <a href="https://dl.acm.org/doi/10.1145/1077603.1077657" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2005-power-prediction-for-intel-xscale-processors-using-performance-monitoring-unit-events.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Linear Regression across DVFS States</span><br/>Identifies PMCs as proxies for activity factors and predicts power across different voltage/frequency operating points.</td>
+  <td>Validated the PMC-based power proxy approach for low-power/embedded processors and demonstrated modeling across Dynamic Voltage and Frequency Scaling states.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">5</span><span>Parameterized Logic Power Consumption Models for FPGA-Based Arithmetic</span></div></td>
+  <td><span class="year-badge">2005</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/1515800" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/2005-parameterized-logic-power-consumption-models-for-fpga-based-arithmetic.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Parameterized Word-Level Models</span><br/>Uses word-level signal statistics to estimate the logic power of FPGA arithmetic blocks such as adders and multipliers without low-level simulation.</td>
+  <td>Delivered fast high-level FPGA arithmetic power estimates within about 10% of XPower, making arithmetic design-space exploration much more practical.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">6</span><span>Complete System Power Estimation Using Processor Performance Events</span></div></td>
+  <td><span class="year-badge">2007</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/4211032" target="_blank">IEEE (conf.)</a> / <a href="https://ieeexplore.ieee.org/document/5714687" target="_blank">IEEE (journal)</a> / <a download="" href="power-modeling-papers/2007-complete-system-power-estimation-using-processor-performance-events.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Linear Regression on PMCs</span><br>Selects a small set of highly correlated Processor Performance Events and models power as a linear combination of their counts.</td>
+  <td>Demonstrated that a small, generic set of software-visible performance counters can accurately estimate total system power (CPU + DRAM) for commodity processors without custom hardware.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">7</span><span>McPAT: An Integrated Power, Area, and Timing Modeling Framework for Multicore and Manycore Architectures</span></div></td>
+  <td><span class="year-badge">2009</span></td>
+  <td><a href="https://dl.acm.org/doi/10.1145/1669112.1669172" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2009-mcpat-an-integrated-power-area-and-timing-modeling-framework-for-multicore-and-manycore-architectures.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Analytical Architecture Model</span><br/>Combines component-level analytical models for cores, caches, NoCs, memory controllers, area, and timing behind an XML interface for architectural simulators.</td>
+  <td>Became a standard architecture-level framework for jointly evaluating power, area, and timing trade-offs in multicore and manycore design exploration.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">8</span><span>RAPL: Memory Power Estimation and Capping</span></div></td>
+  <td><span class="year-badge">2010</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/5599016" target="_blank">IEEE</a> / <a href="https://dl.acm.org/doi/10.1145/1840845.1840883" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2010-rapl-memory-power-estimation-and-capping.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Analytical Event-Based Modeling</span><br>Assigns energy weights to specific transaction types (e.g., DRAM reads/writes) and accumulates them in real-time within hardware/microcode.</td>
+  <td>Describes the industry-standard Intel RAPL interface. Demonstrated how to implement a power proxy with negligible software overhead by embedding accumulator logic directly into hardware/firmware for closed-loop power management.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">9</span><span>An Integrated GPU Power and Performance Model</span></div></td>
+  <td><span class="year-badge">2010</span></td>
+  <td><a href="https://dl.acm.org/doi/10.1145/1815961.1815998" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2010-an-integrated-gpu-power-and-performance-model.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Statistical Instruction Analysis</span><br/>Estimates GPU power by analyzing PTX instruction rates and global memory accesses, applying empirical weights from micro-benchmarks.</td>
+  <td>Extended PMC-based power proxies to massively parallel GPU architectures, highlighting the need to account for memory coalescence and warp divergence in non-CPU IP blocks.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">10</span><span>Decomposable and Responsive Power Models for Multicore Processors using Performance Counters</span></div></td>
+  <td><span class="year-badge">2010</span></td>
+  <td><a href="https://dl.acm.org/doi/10.1145/1810085.1810108" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2010-decomposable-and-responsive-power-models-for-multicore-processors-using-performance-counters.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">PCA + Statistical Clustering</span><br/>Analyzes all counter behaviors to automatically group and select those capturing power-consumption variance with minimal redundancy.</td>
+  <td>Proposed an automated methodology for optimal proxy selection, removing reliance on expert intuition and maximizing accuracy while minimizing model complexity.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">11</span><span>PrEsto: An FPGA-Accelerated Power Estimation Methodology for Complex Systems</span></div></td>
+  <td><span class="year-badge">2010</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/5694268/" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/2010-presto-an-fpga-accelerated-power-estimation-methodology-for-complex-systems.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Linear Regression on I/O Boundary Signals</span><br>Selects input/output signals at module boundaries as proxies and uses linear regression, integrated into FPGA-based performance simulators.</td>
+  <td>Predicts cycle-by-cycle power of LEON3 and ARM Cortex-A8 cores within 6% of commercial gate-level tools while running orders of magnitude faster via FPGA acceleration.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">12</span><span>Accurate Fine-Grained Processor Power Proxies</span></div></td>
+  <td><span class="year-badge">2012</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/6493622" target="_blank">IEEE</a> / <a href="https://dl.acm.org/doi/10.1109/MICRO.2012.29" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2012-accurate-fine-grained-processor-power-proxies.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Weighted Counter-Based Architecture</span><br/>Monitors specific on-chip activities, assigns power-use weight factors, and aggregates weighted counts into proxy values.</td>
+  <td>Presented an accurate runtime per-core power proxy enabling fine-grained microprocessor power management and what-if analysis by the energy-efficiency controller. Validated at both chip and core levels.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">13</span><span>An Accurate Dynamic Power Model on FPGA Routing Resources</span></div></td>
+  <td><span class="year-badge">2012</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/7007656" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/2012-an-accurate-dynamic-power-model-on-fpga-routing-resources.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">RC-Based Routing Power Model</span><br/>Models pass-transistor chains and multiplexers with a more accurate RC formulation that tracks varying input and output voltages in FPGA routing resources.</td>
+  <td>Improved dynamic FPGA routing-power accuracy to below 3% for pass-transistor chains and below 5% for muxes versus HSPICE simulation.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">14</span><span>Dynamic and Leakage Power Estimation in Register Files Using Neural Networks</span></div></td>
+  <td><span class="year-badge">2012</span></td>
+  <td><a href="https://doi.org/10.4236/cs.2012.32016" target="_blank">DOI</a> / <a download="" href="power-modeling-papers/2012-dynamic-and-leakage-power-estimation-in-register-files-using-neural-networks.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Neural Network Register-File Model</span><br/>Trains neural networks on register-file structural and usage parameters to estimate both dynamic and leakage power without transistor-level analysis.</td>
+  <td>Extended ML-based estimation beyond total dynamic power by modeling register-file leakage and dynamic components together for early embedded-system design.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">15</span><span>Method for Dynamic Power Monitoring on FPGAs</span></div></td>
+  <td><span class="year-badge">2014</span></td>
+  <td><a href="https://hal.science/hal-01139163" target="_blank">HAL</a> / <a download="" href="power-modeling-papers/2014-method-for-dynamic-power-monitoring-on-fpgas.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Automatic Signal Selection + Event Counters</span><br/>Selects relevant RTL signals with a Greedy Stepwise filter, inserts event counters, and automatically derives a runtime FPGA power model.</td>
+  <td>Presented a generic CAD flow that auto-generates runtime power monitors for FPGA SoCs while balancing estimation accuracy against monitoring overhead.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">16</span><span>Early Stage Real-Time SoC Power Estimation Using RTL Instrumentation</span></div></td>
+  <td><span class="year-badge">2015</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/7059105/" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/2015-early-stage-real-time-soc-power-estimation-using-rtl-instrumentation.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">SVD-Based Model Abstraction</span><br>Uses singular value decomposition to abstract principal components of the register-toggling-to-power relationship, then instruments the model into RTL for FPGA-based real-time estimation.</td>
+  <td>Cycle-by-cycle power prediction within 5% accuracy on three IP cores. Addresses the challenge of real-time, long-interval accurate estimation for system-level software/hardware tuning.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">17</span><span>Power Prediction of Embedded Scalar and Vector Processor: Challenges and Solutions</span></div></td>
+  <td><span class="year-badge">2017</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/7918320" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/2017-power-prediction-of-embedded-scalar-and-vector-processor-challenges-and-solutions.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Selective Event Regression</span><br/>Builds a canonical dynamic-power equation from carefully chosen PMCs, stall probe points, and instruction groups for a commercial embedded processor.</td>
+  <td>Documented a production-ready methodology for PMC-based power prediction, reaching about 8% average error versus commercial EDA power while greatly reducing compute cost.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">18</span><span>PowerProbe: Run-time Power Modeling Through Automatic RTL Instrumentation</span></div></td>
+  <td><span class="year-badge">2018</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/8342106/" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/2018-powerprobe-run-time-power-modeling-through-automatic-rtl-instrumentation.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Automatic RTL Instrumentation</span><br/>Extracts a power model from the RTL description without leveraging any performance counter. Post-map logic simulation provides power traces used to derive and instrument the model.</td>
+  <td>Trades power-model accuracy against monitoring resource cost. The automatic instrumentation strategy ensures timely implementation regardless of target platform complexity.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">19</span><span>KAPow: High-Accuracy, Low-Overhead Online Per-Module Power Estimation for FPGA Designs</span></div></td>
+  <td><span class="year-badge">2018</span></td>
+  <td><a href="https://dl.acm.org/doi/10.1145/3129789" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2018-kapow-high-accuracy-low-overhead-online-per-module-power-estimation-for-fpga-designs.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Adaptive Per-Module Online Modeling</span><br/>Combines register-level switching activity with system-level power measurements, then refines a live per-module model online with automated signal selection and pruning.</td>
+  <td>Enabled module-level online FPGA power breakdowns with low overhead, supporting power-aware task mapping and adaptive optimization instead of whole-chip estimates only.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">20</span><span>An Ensemble Learning Approach for In-Situ Monitoring of FPGA Dynamic Power</span></div></td>
+  <td><span class="year-badge">2018</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/8418725" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/2018-an-ensemble-learning-approach-for-in-situ-monitoring-of-fpga-dynamic-power.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Decision-Tree Ensemble Monitor</span><br/>Uses a CAD flow to select features, tune hyperparameters, train multiple customized tree learners, and synthesize the estimator into FPGA hardware.</td>
+  <td>Improved runtime FPGA dynamic-power prediction to within about 1.9% maximum error while keeping LUT overhead near 1.22% of the target FPGA.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">21</span><span>Simmani: Runtime Power Modeling for Arbitrary RTL with Automatic Signal Selection</span></div></td>
+  <td><span class="year-badge">2019</span></td>
+  <td><a href="https://dl.acm.org/doi/10.1145/3352460.3358322" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2019-simmani-runtime-power-modeling-for-arbitrary-rtl-with-automatic-signal-selection.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">K-Means Clustering + Regression</span><br>Clusters RTL signals by toggle-pattern similarity, selects representative signals, and constructs a workload-independent activity-based power model.</td>
+  <td>Automatically instruments FPGA-accelerated RTL simulations with runtime activity counters. Demonstrated on a heterogeneous processor running real-world ML workloads, not just microbenchmarks.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">22</span><span>PRIMAL: Power Inference using Machine Learning</span></div></td>
+  <td><span class="year-badge">2019</span></td>
+  <td><a href="https://dl.acm.org/doi/10.1145/3316781.3317884" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2019-primal-power-inference-using-machine-learning.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">ML Models (Ridge, GBT, MLP, CNN)</span><br/>Trains ML models on design verification testbenches using transitions of all registers as features, characterizing power of reusable circuit building blocks.</td>
+  <td>Average power error &lt;1% across diverse benchmarks (15× faster than commercial RTL tools). Cycle-by-cycle estimation 50× faster than gate-level analysis with &lt;5% error.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">23</span><span>GRANNITE: Graph Neural Network Inference for Transferable Power Estimation</span></div></td>
+  <td><span class="year-badge">2020</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/9218643" target="_blank">IEEE</a> / <a href="https://dl.acm.org/doi/10.5555/3437539.3437599" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2020-grannite-graph-neural-network-inference-for-transferable-power-estimation.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Graph Neural Network (GNN)</span><br>Represents netlists as graphs; learns to propagate average toggle rates through combinational logic. Infers toggle rates on new workloads/netlists from RTL simulation in seconds.</td>
+  <td>&gt;18.7× speedup over gate-level simulation with &lt;5.5% error. Key novelty is transferability — a trained model applies to previously unseen netlists with 25.9% lower error than probabilistic approaches.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">24</span><span>NeuPow: A CAD Methodology for High-Level Power Estimation Based on Machine Learning</span></div></td>
+  <td><span class="year-badge">2020</span></td>
+  <td><a href="https://dl.acm.org/doi/10.1145/3372266.3372269" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2020-neupow-a-cad-methodology-for-high-level-power-estimation-based-on-machine-learning.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">ANN Propagation Across Component Models</span><br>Represents each digital component with an ANN power model and propagates signals through connected ANN blocks, including a frequency-aware variant.</td>
+  <td>Showed that ML component models can scale to composite systems with less than 9% relative error and roughly 84x speedup over conventional power-estimation flows.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">25</span><span>McPAT-Calib: A Microarchitecture Power Modeling Framework for Modern CPUs</span></div></td>
+  <td><span class="year-badge">2021</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/9643457" target="_blank">IEEE</a> / <a href="power-modeling-papers/2021-mcpat-calib-a-microarchitecture-power-modeling-framework-for-modern-cpus.pdf" target="_blank" download>Local Copy</a></td>
+  <td><span class="tag">Black-Box Calibration (XGBoost / Lasso)</span><br/>Takes the McPAT architectural power simulator and calibrates it against real hardware PMCs using machine learning.</td>
+  <td>Bridges pre-silicon simulation and post-silicon runtime proxies by correcting theoretical models to match runtime reality, yielding physically meaningful proxies rather than purely statistical correlations.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">26</span><span>APOLLO: An Automated Power Modeling Framework for Runtime Power Introspection in High-Volume Commercial Microprocessors</span></div></td>
+  <td><span class="year-badge">2021</span></td>
+  <td><a href="https://dl.acm.org/doi/10.1145/3466752.3480064" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2021-apollo-an-automated-power-modeling-framework-for-runtime-power-introspection-in-high-volume-commercial-microprocessors.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">MCP-Based Proxy Selection</span><br/>Automatically selects a tiny set of RTL power proxies with minimax concave penalty (MCP) feature selection, then builds a per-cycle estimator and synthesizable on-chip power meter.</td>
+  <td>Demonstrated per-cycle power modeling and runtime OPM integration for industrial Arm CPUs with strong accuracy and under 1% area/power overhead.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">27</span><span>DEEP: Developing Extremely Efficient Runtime On-Chip Power Meters</span></div></td>
+  <td><span class="year-badge">2022</span></td>
+  <td><a href="https://dl.acm.org/doi/10.1145/3508352.3549427" target="_blank">ACM DL</a> / <a download="" href="power-modeling-papers/2022-deep-developing-extremely-efficient-runtime-on-chip-power-meters.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">MCP Coarse Selection + Bit-Level Refinement</span><br>Selects OPM inputs from individual RTL signal bits. A two-step proxy selection (coarse → fine) feeds a linear model that sums weights of toggling signals.</td>
+  <td>Reduced OPM hardware cost by 4–6× over prior art while achieving R² = 0.97 in per-cycle power prediction with unprecedented low area overhead.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">28</span><span>PANDA: Architecture-Level Power Evaluation by Unifying Analytical and Machine Learning Solutions</span></div></td>
+  <td><span class="year-badge">2023</span></td>
+  <td><a href="https://arxiv.org/abs/2312.08994" target="_blank">arXiv</a> / <a download="" href="power-modeling-papers/2023-panda-architecture-level-power-evaluation-by-unifying-analytical-and-machine-learning-solutions.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Hybrid Analytical + ML Model</span><br/>Unifies classical analytical architecture models and ML calibration so the estimator can generalize to unseen designs and even new process nodes with limited training data.</td>
+  <td>Bridged the gap between interpretable analytical models and data-driven accuracy, improving architecture-level power prediction for unknown designs under realistic data scarcity.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">29</span><span>PROPHET: Predictive On-Chip Power Meter in Hardware Accelerator for DNN</span></div></td>
+  <td><span class="year-badge">2023</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/10247979" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/2023-prophet-predictive-on-chip-power-meter-in-hardware-accelerator-for-dnn.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Data-Pattern Predictive OPM</span><br>Samples predefined data patterns during memory access to predict accelerator power before the corresponding MAC activity actually occurs.</td>
+  <td>Introduced a predictive DNN-accelerator power meter that reports power dozens of cycles in advance with 4-cycle resolution and under 2% area overhead.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">30</span><span>Data-Pattern-Based Predictive On-Chip Power Meter in DNN Accelerator</span></div></td>
+  <td><span class="year-badge">2024</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/10554667" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/2024-data-pattern-based-predictive-on-chip-power-meter-in-dnn-accelerator.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">Data-Pattern Predictive Power Model</span><br/>Extends PROPHET into a data-pattern-based power-modeling flow for MAC-based DNN accelerators across multiple dataflows and data types.</td>
+  <td>Validated predictive DNN-accelerator power metering at 2-cycle resolution with R² &gt; 0.9, normalized MAE below 7%, and under 4.5% area/power overhead.</td>
+</tr>
+
+<tr>
+  <td><div class="name-cell"><span class="idx">31</span><span>Run-Time Power Management System by On-Die Power Sensor with Silicon Machine Learning-Based Calibration in a 3nm Octa-Core CPU</span></div></td>
+  <td><span class="year-badge">2025</span></td>
+  <td><a href="https://ieeexplore.ieee.org/document/10904634" target="_blank">IEEE</a> / <a download="" href="power-modeling-papers/2025-run-time-power-management-system-by-on-die-power-sensor-with-silicon-machine-learning-based-calibration-in-a-3nm-octa-core-cpu.pdf" target="_blank">Local Copy</a></td>
+  <td><span class="tag">On-Die Sensor + Silicon ML Calibration</span><br/>Computes runtime power from synchronized on-die current and voltage sensors, then calibrates sensing accuracy with a silicon-trained ML model.</td>
+  <td>Showed a production 3nm CPU power-sensing system with 94.83% power accuracy, 10µs monitoring windows, and only 0.0313% CPU-area overhead.</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<p class="footer-note">31 unique papers sorted chronologically (1996–2025), combining the prior review set with qualifying local PDFs under literatures/. Updated Mar 2026 with copied local PDFs in power-modeling-papers/ when available.</p>
+
+
+
+</body></html>
